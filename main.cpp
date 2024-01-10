@@ -8,26 +8,15 @@ int main() {
 	setlocale(0, "");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	// –ü–æ–ø—ã—Ç–∫–∞ –≤—Å—Ç–∞–≤–∏—Ç—å –ø—É—Å—Ç–æ–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –∏–∑–¥–∞—Ç–µ–ª—è –≤ –µ–≥–æ –∫–æ–Ω—Å—Ç—Ä—É–∫—Ç–æ—Ä
-	Publisher* publisher = new Publisher("");
-	// –†–∞–±–æ—Ç–∞ —Å –æ–¥–Ω–æ–º–µ—Ä–Ω—ã–º –º–∞—Å—Å–∏–≤–æ–º –æ–±—ä–µ–∫—Ç–æ–≤ –∫–Ω–∏–≥
-	Book books1[4];
-	for (int i = 0; i < 4; i++) {
-		books1[i].enterBookData();
-	}
-	// –†–∞–±–æ—Ç–∞ —Å –¥–≤—É–º–µ—Ä–Ω—ã–º –º–∞—Å—Å–∏–≤–æ–º –æ–±—ä–µ–∫—Ç–æ–≤ –∫–Ω–∏–≥
-	Book books2[2][2];
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 2; j++) {
-			books2[i][j].enterBookData();
-		}
-	}
+	AuthorTranslator author_translator1;
+	AuthorTranslator* author_translator2 = new AuthorTranslator("Ã‡¯‡Í");
+	AuthorTranslator* author_translator3 = new AuthorTranslator("◊ÛÍÓ‚ÒÍËÈ", " .».", "–Ó‰ËÎÒˇ ‚...", "¿Ì„ÎËÈÒÍËÈ");
+	author_translator1.setAuthorTranslatorData("œ‡ÒÚÂÌ‡Í", "¡.À.", "¡˚Î ÓÊ‰∏Ì ‚...", "¿Ì„ÎËÈÒÍËÈ");
+	author_translator1.getAuthorTranslatorData();
+	author_translator2->getAuthorData();
+	author_translator3->getAuthorTranslatorData();
 	_getch();
-	delete publisher;
-	delete[] books1;
-	for (int i = 0; i < 2; i++) {
-		delete[] books2[i];
-	}
-	delete[] books2;
+	delete author_translator2;
+	delete author_translator3;
 	return 0;
 }

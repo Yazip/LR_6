@@ -14,7 +14,7 @@ public:
 	Author(string last_name, string initials, string biography); // Конструктор со всеми параметрами
 	void setAuthorData(string last_name, string initials, string biography); // Сеттер
 	void enterAuthorData(); // Метод для пользовательского ввода данных
-	void getAuthorData(); // Геттер
+	virtual void getAuthorData(); // Геттер
 	static int getAuthorCount(); // Статический геттер для получения кол-ва объектов
 	void getAuthorLastNamePtr(string* last_name); // Геттер для получения фамилии автора через указатель
 	void getAuthorLastNameRef(string& last_name); // Геттер для получения фамилии автора через ссылку
