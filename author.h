@@ -19,4 +19,5 @@ public:
 	void getAuthorLastNamePtr(string* last_name); // Геттер для получения фамилии автора через указатель
 	void getAuthorLastNameRef(string& last_name); // Геттер для получения фамилии автора через ссылку
 	friend void getAuthorBiography(const Author&); // Дружественная ф-ия получения биографии автора
+	Author& operator=(const Author& other); // Перегрузка оператора "=" базового класса
 };

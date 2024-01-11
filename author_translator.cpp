@@ -41,3 +41,10 @@ void AuthorTranslator::getAuthorData() {
 	cout << "Биография: " << biography << endl;
 	cout << "Языки: " << languages << endl;
 }
+// Перегрузка оператора присваивания объекту производного класса объектов базового класса
+AuthorTranslator& AuthorTranslator::operator=(const Author& other) {
+	if (this != &other) {
+		*static_cast<Author*>(this) = other;
+	}
+	return *this;
+}

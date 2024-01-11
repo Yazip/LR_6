@@ -8,15 +8,12 @@ int main() {
 	setlocale(0, "");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	AuthorTranslator author_translator1;
-	AuthorTranslator* author_translator2 = new AuthorTranslator("Маршак");
-	AuthorTranslator* author_translator3 = new AuthorTranslator("Чуковский", "К.И.", "Родился в...", "Английский");
-	author_translator1.setAuthorTranslatorData("Пастернак", "Б.Л.", "Был рождён в...", "Английский");
-	author_translator1.getAuthorTranslatorData();
-	author_translator2->getAuthorData();
-	author_translator3->getAuthorTranslatorData();
+	AuthorTranslator* author_translator = new AuthorTranslator("Чуковский", "К.И.", "Родился в...", "Английский");
+	Author* author = new Author("Шукшин", "В.М.", "Василий Шукшин родился 25 июля 1929 года в Алтайском селе Сростки в крестьянской семье.");
+	*author_translator = *author;
+	author_translator->getAuthorTranslatorData();
 	_getch();
-	delete author_translator2;
-	delete author_translator3;
+	delete author_translator;
+	delete author;
 	return 0;
 }

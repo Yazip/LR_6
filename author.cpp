@@ -62,3 +62,12 @@ void Author::getAuthorLastNameRef(string& last_name) {
 void getAuthorBiography(const Author& author) {
 	cout << "Биография автора книги: " << author.biography << endl;
 }
+// Перегрузка оператора "=" базового класса
+Author& Author::operator=(const Author& other) {
+	if (this != &other) {
+		last_name = other.last_name;
+		initials = other.initials;
+		biography = other.biography;
+	}
+	return *this;
+}

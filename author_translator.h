@@ -14,4 +14,5 @@ public:
 	void enterAuthorTranslatorData(); // Метод для пользовательского ввода данных
 	void getAuthorTranslatorData(); // Геттер (перегрузка метода базового класса с вызовом метода базового класса)
 	void getAuthorData() override; // Геттер (перегрузка метода базового класса без вызова метода базового класса)
+	AuthorTranslator& operator=(const Author& other); // Перегрузка оператора присваивания объекту производного класса объектов базового класса
 };
