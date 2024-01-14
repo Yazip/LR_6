@@ -34,13 +34,6 @@ void Genre::enterGenreData() {
 	cout << endl;
 	cout << "Жанр " << name << " был успешно создан!" << endl;
 }
-// Геттер
-void Genre::getGenreData() {
-	cout << endl;
-	cout << "Информация о жанре:" << endl;
-	cout << "Название: " << name << endl;
-	cout << "Описание: " << description << endl;
-}
 // Статический геттер для получения кол-ва объектов
 int Genre::getGenreCount() {
 	return genre_count;
@@ -51,4 +44,11 @@ Genre Genre::operator+(const Genre& other) {
 	result.name = this->name + "-" + other.name;
 	result.description = "Объединение описаний: 1) " + this->description + " 2) " + other.description;
 	return result;
+}
+// Замена метода Display перегрузкой "<<"
+ostream& operator<<(ostream& os, const Genre& genre) {
+	os << "\n";
+	os << "Название: " << genre.name << "\n";
+	os << "Описание: " << genre.description << "\n";
+	return os;
 }

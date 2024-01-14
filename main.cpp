@@ -8,12 +8,8 @@ int main() {
 	setlocale(0, "");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	AuthorTranslator* author_translator = new AuthorTranslator("Чуковский", "К.И.", "Родился в...", "Английский");
-	Author* author = new Author("Шукшин", "В.М.", "Василий Шукшин родился 25 июля 1929 года в Алтайском селе Сростки в крестьянской семье.");
-	*author_translator = *author;
-	author_translator->getAuthorTranslatorData();
+	Genre genre("Повесть", "Прозаический жанр, занимающий по объёму текста промежуточное место между романом и рассказом, тяготеющий к хроникальному сюжету, воспроизводящему естественное течение жизни.");
+	cout << genre;
 	_getch();
-	delete author_translator;
-	delete author;
 	return 0;
 }
