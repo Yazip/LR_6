@@ -2,17 +2,17 @@
 #include <string>
 #include "author.h"
 using namespace std;
-// Класс автор-переводчик, наследник класса автор
+// РљР»Р°СЃСЃ Р°РІС‚РѕСЂ-РїРµСЂРµРІРѕРґС‡РёРє, РЅР°СЃР»РµРґРЅРёРє РєР»Р°СЃСЃР° Р°РІС‚РѕСЂ
 class AuthorTranslator : public Author {
 private:
 	string languages;
 public:
-	AuthorTranslator(); // Конструктор без параметров
-	AuthorTranslator(string last_name); // Конструктор с 1 параметром
-	AuthorTranslator(string last_name, string initials, string biography, string languages); // Конструктор со всеми параметрами
-	void setAuthorTranslatorData(string last_name, string initials, string biography, string languages); // Сеттер
-	void enterAuthorTranslatorData(); // Метод для пользовательского ввода данных
-	void getAuthorTranslatorData(); // Геттер (перегрузка метода базового класса с вызовом метода базового класса)
-	void getAuthorData() override; // Геттер (перегрузка метода базового класса без вызова метода базового класса)
-	AuthorTranslator& operator=(const Author& other); // Перегрузка оператора присваивания объекту производного класса объектов базового класса
+	AuthorTranslator(); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	AuthorTranslator(string last_name); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ 1 РїР°СЂР°РјРµС‚СЂРѕРј
+	AuthorTranslator(string last_name, string initials, string biography, string languages); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕ РІСЃРµРјРё РїР°СЂР°РјРµС‚СЂР°РјРё
+	void setAuthorTranslatorData(string last_name, string initials, string biography, string languages); // РЎРµС‚С‚РµСЂ
+	void enterAuthorTranslatorData(); // РњРµС‚РѕРґ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ РІРІРѕРґР° РґР°РЅРЅС‹С…
+	void getAuthorTranslatorData(); // Р“РµС‚С‚РµСЂ (РїРµСЂРµРіСЂСѓР·РєР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° СЃ РІС‹Р·РѕРІРѕРј РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°)
+	void getAuthorData() override; // Р“РµС‚С‚РµСЂ (РїРµСЂРµРіСЂСѓР·РєР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° Р±РµР· РІС‹Р·РѕРІР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°)
+	AuthorTranslator& operator=(const Author& other); // РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РѕР±СЉРµРєС‚Сѓ РїСЂРѕРёР·РІРѕРґРЅРѕРіРѕ РєР»Р°СЃСЃР° РѕР±СЉРµРєС‚РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 };

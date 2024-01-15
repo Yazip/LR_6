@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
+#include "publication.h"
 using namespace std;
 // Класс книга
-class Book {
+class Book : public Publication {
 private:
 	string author_last_name;
 	string author_initials;
@@ -21,6 +22,7 @@ public:
 	bool isAuthorLastNamesSame(string author_last_name); // Метод для сравнения фамилий автора
 	bool isGenreNamesSame(string genre_name); // Метод для сравнения названий жанра
 	static int getBookCount(); // Статический геттер для получения кол-ва объектов
+	void read() override; // Переопределение виртуального метода из базового абстрактного класса
 	Book& operator++(); // Перегрузка префиксного оператора ++: увеличение кол-ва страниц на 1
 	Book operator++(int); // Перегрузка постфиксного оператора ++: увеличение кол-ва страниц на 1
 };

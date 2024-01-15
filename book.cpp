@@ -180,6 +180,10 @@ void findBooksByGenre(Book books[], int book_count, string genre_name) {
 		cout << "Ничего не найдено!" << endl;
 	}
 }
+// Переопределение виртуального метода из базового абстрактного класса
+void Book::read() {
+	cout << "Книга прочитана" << endl;
+}
 // Перегрузка префиксного оператора ++: увеличение кол-ва страниц на 1
 Book& Book::operator++() {
 	this->page_count++;

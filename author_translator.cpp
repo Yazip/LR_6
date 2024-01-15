@@ -2,46 +2,46 @@
 #include <string>
 #include "author_translator.h"
 using namespace std;
-// Конструктор без параметров
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 AuthorTranslator::AuthorTranslator() : Author(), languages("") {}
-// Конструктор с 1 параметром
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ 1 РїР°СЂР°РјРµС‚СЂРѕРј
 AuthorTranslator::AuthorTranslator(string last_name) : Author(last_name) {}
-// Конструктор со всеми параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕ РІСЃРµРјРё РїР°СЂР°РјРµС‚СЂР°РјРё
 AuthorTranslator::AuthorTranslator(string last_name, string initials, string biography, string languages) : Author(last_name, initials, biography), languages(languages) {}
-// Сеттер
+// РЎРµС‚С‚РµСЂ
 void AuthorTranslator::setAuthorTranslatorData(string last_name, string initials, string biography, string languages) {
 	setAuthorData(last_name, initials, biography);
 	this->languages = languages;
 }
-// Метод для пользовательского ввода данных
+// РњРµС‚РѕРґ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ РІРІРѕРґР° РґР°РЅРЅС‹С…
 void AuthorTranslator::enterAuthorTranslatorData() {
 	cout << endl;
-	cout << "Введите фамилию автора:" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ Р°РІС‚РѕСЂР°:" << endl;
 	getline(cin, last_name);
-	cout << "Введите инициалы автора:" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РёРЅРёС†РёР°Р»С‹ Р°РІС‚РѕСЂР°:" << endl;
 	getline(cin, initials);
-	cout << "Введите биографию автора:" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ Р±РёРѕРіСЂР°С„РёСЋ Р°РІС‚РѕСЂР°:" << endl;
 	getline(cin, biography);
-	cout << "Введите языки, которые используются автором-переводчиком:" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ СЏР·С‹РєРё, РєРѕС‚РѕСЂС‹Рµ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ Р°РІС‚РѕСЂРѕРј-РїРµСЂРµРІРѕРґС‡РёРєРѕРј:" << endl;
 	getline(cin, languages);
 	cout << endl;
-	cout << "Автор-переводчик " << last_name << " " << initials << " был успешно создан!" << endl;
+	cout << "РђРІС‚РѕСЂ-РїРµСЂРµРІРѕРґС‡РёРє " << last_name << " " << initials << " Р±С‹Р» СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ!" << endl;
 }
-// Геттер (перегрузка метода базового класса с вызовом метода базового класса)
+// Р“РµС‚С‚РµСЂ (РїРµСЂРµРіСЂСѓР·РєР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° СЃ РІС‹Р·РѕРІРѕРј РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°)
 void AuthorTranslator::getAuthorTranslatorData() {
 	Author::getAuthorData();
-	cout << "Языки: " << languages << endl;
+	cout << "РЇР·С‹РєРё: " << languages << endl;
 }
-// Геттер (перегрузка метода базового класса без вызова метода базового класса)
+// Р“РµС‚С‚РµСЂ (РїРµСЂРµРіСЂСѓР·РєР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° Р±РµР· РІС‹Р·РѕРІР° РјРµС‚РѕРґР° Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°)
 void AuthorTranslator::getAuthorData() {
 	cout << endl;
-	cout << "Информация об авторе:" << endl;
-	cout << "Фамилия: " << last_name << endl;
-	cout << "Инициалы: " << initials << endl;
-	cout << "Биография: " << biography << endl;
-	cout << "Языки: " << languages << endl;
+	cout << "РРЅС„РѕСЂРјР°С†РёСЏ РѕР± Р°РІС‚РѕСЂРµ:" << endl;
+	cout << "Р¤Р°РјРёР»РёСЏ: " << last_name << endl;
+	cout << "РРЅРёС†РёР°Р»С‹: " << initials << endl;
+	cout << "Р‘РёРѕРіСЂР°С„РёСЏ: " << biography << endl;
+	cout << "РЇР·С‹РєРё: " << languages << endl;
 }
-// Перегрузка оператора присваивания объекту производного класса объектов базового класса
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РѕР±СЉРµРєС‚Сѓ РїСЂРѕРёР·РІРѕРґРЅРѕРіРѕ РєР»Р°СЃСЃР° РѕР±СЉРµРєС‚РѕРІ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 AuthorTranslator& AuthorTranslator::operator=(const Author& other) {
 	if (this != &other) {
 		*static_cast<Author*>(this) = other;

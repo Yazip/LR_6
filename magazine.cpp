@@ -82,6 +82,10 @@ bool Magazine::isPublisherNamesSame(string publisher_name) {
 int Magazine::getMagazineCount() {
 	return magazine_count;
 }
+// Переопределение виртуального метода из базового абстрактного класса
+void Magazine::read() {
+	cout << "Журнал прочитан" << endl;
+}
 // Функция поиска журналов по издателю
 void findMagazinesByPublisher(Magazine magazines[], int magazine_count, string publisher_name) {
 	Magazine found_magazines[300];

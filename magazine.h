@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
+#include "publication.h"
 using namespace std;
 // Класс журнал
-class Magazine {
+class Magazine : public Publication {
 private:
 	string publisher_name;
 	string title;
@@ -19,6 +20,7 @@ public:
 	void getMagazineData(); // Геттер
 	bool isPublisherNamesSame(string publisher_name); // Метод для сравнения названий издателя
 	static int getMagazineCount(); // Статический геттер для получения кол-ва объектов
+	void read() override; // Переопределение виртуального метода из базового абстрактного класса
 };
 // Функция поиска журналов по издателю
 void findMagazinesByPublisher(Magazine magazines[], int magazine_count, string publisher_name);
