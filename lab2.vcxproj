@@ -143,7 +143,6 @@
     <ClCompile Include="genre.cpp" />
     <ClCompile Include="magazine.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="publisher.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
