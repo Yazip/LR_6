@@ -1,7 +1,7 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс автор
-public class Author {
+public class Author implements Writer {
     protected String last_name;
     protected String initials;
     protected String biography;
@@ -53,5 +53,10 @@ public class Author {
     // Статический геттер для получения кол-ва объектов
     public static int getAuthorCount() {
         return author_count;
+    }
+    // Реализация метода write() из интерфейса Writer
+    @Override
+    public void write() {
+        System.out.println("Книга написана");
     }
 }
