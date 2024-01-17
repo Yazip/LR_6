@@ -48,4 +48,9 @@ public class Genre {
     public static int getGenreCount() {
         return genre_count;
     }
+    // Замена метода Display перегрузкой toString
+    @Override
+    public String toString() {
+        return "\nНазвание: " + name + "\nОписание: " + description + "\n";
+    }
 }

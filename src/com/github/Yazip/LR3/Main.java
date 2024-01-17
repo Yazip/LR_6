@@ -2,13 +2,9 @@ package com.github.Yazip.LR3;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        AuthorTranslator author_translator1 = new AuthorTranslator();
-        AuthorTranslator author_translator2 = new AuthorTranslator("Маршак");
-        AuthorTranslator author_translator3 = new AuthorTranslator("Чуковский", "К.И.", "Родился в...", "Английский");
-        author_translator1.setAuthorTranslatorData("Пастернак", "Б.Л.", "Родился...", "Английский");
-        author_translator1.getAuthorTranslatorData();
-        author_translator2.getAuthorData();
-        author_translator3.getAuthorTranslatorData();
+        Genre genre = new Genre("The Story", "A prose genre that occupies an intermediate place between a novel and a short story in terms of the volume of the text, tending to a chronicle plot that reproduces the natural course of life.");
+        String genre_str = genre.toString();
+        System.out.println(genre_str);
         new Scanner(System.in).nextLine();
     }
 }
