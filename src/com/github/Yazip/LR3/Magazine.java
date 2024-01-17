@@ -1,7 +1,7 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс журнал
-public class Magazine {
+public class Magazine extends Publication{
     private String publisher_name;
     private String title;
     private String frequency;
@@ -109,5 +109,10 @@ public class Magazine {
     // Статический геттер для получения кол-ва объектов
     public static int getMagazineCount() {
         return magazine_count;
+    }
+    // Переопределение абстрактного метода из базового абстрактного класса
+    @Override
+    public void read() {
+        System.out.println("Журнал прочитан");
     }
 }

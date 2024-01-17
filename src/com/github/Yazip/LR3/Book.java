@@ -1,7 +1,7 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс книга
-public class Book {
+public class Book extends Publication {
     private String author_last_name;
     private String author_initials;
     private String title;
@@ -159,5 +159,10 @@ public class Book {
     // Геттер для получения жанра книги
     public String getBookGenreName() {
         return genre_name;
+    }
+    // Переопределение абстрактного метода из базового абстрактного класса
+    @Override
+    public void read() {
+        System.out.println("Книга прочитана");
     }
 }

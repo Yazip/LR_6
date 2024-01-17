@@ -43,6 +43,7 @@ public class AuthorTranslator extends Author{
         System.out.println("Языки: " + languages);
     }
     // Геттер (перегрузка метода базового класса без вызова метода базового класса)
+    @Override
     public void getAuthorData() {
         System.out.println();
         System.out.println("Информация об авторе:");
