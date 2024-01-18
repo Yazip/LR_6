@@ -1,17 +1,16 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс издатель
-public class Publisher {
+public class Publisher<T> {
     private String name;
     private String address;
-    private String phone_num;
+    private T phone_num;
     private String email;
     private static int publisher_count = 0;
     // Конструктор без параметров
     public Publisher() {
         name = "";
         address = "";
-        phone_num = "";
         email = "";
         ++publisher_count;
     }
@@ -29,31 +28,16 @@ public class Publisher {
         }
     }
     // Конструктор со всеми параметрами
-    public Publisher(String name, String address, String phone_num, String email) {
+    public Publisher(String name, String address, T phone_num, String email) {
         setPublisherData(name, address, phone_num, email);
         ++publisher_count;
     }
     // Сеттер
-    public void setPublisherData(String name, String address, String phone_num, String email) {
+    public void setPublisherData(String name, String address, T phone_num, String email) {
         this.name = name;
         this.address = address;
-        this.phone_num = phone_num.replaceAll("[^\\d]", "");
+        this.phone_num = phone_num;
         this.email = email;
-    }
-    // Метод для пользовательского ввода данных
-    public void enterPublisherData() {
-        Scanner scanner = new Scanner(System.in, "UTF-8");
-        System.out.println();
-        System.out.println("Введите название издателя:");
-        name = scanner.nextLine();
-        System.out.println("Введите адрес издателя:");
-        address = scanner.nextLine();
-        System.out.println("Введите номер телефона издателя:");
-        phone_num = scanner.nextLine();
-        System.out.println("Введите электронную почту издателя:");
-        email = scanner.nextLine();
-        System.out.println();
-        System.out.println("Издатель " + name + " был успешно создан!");
     }
     // Геттер
     public void getPublisherData() {

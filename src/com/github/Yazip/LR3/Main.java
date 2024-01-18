@@ -2,18 +2,10 @@ package com.github.Yazip.LR3;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Author author1 = new Author("Shukshin");
-        Author author2 = new Author("Sholokhov");
-        Author[] authors = {author1, author2};
-        Genre genre1 = new Genre("The Story", "A prose genre that occupies an intermediate place between a novel and a short story in terms of the volume of the text, tending to a chronicle plot that reproduces the natural course of life.");
-        genre1.setAuthors(authors);
-        Genre genre2 = genre1.shallowClone();
-        System.out.println("Мелкое клонирование:");
-        genre2.getGenreData();
-        Genre genre3 = genre1.deepClone();
-        System.out.println();
-        System.out.println("Глубокое клонирование:");
-        genre3.getGenreData();
+        Publisher<String> publisher1 = new Publisher<String>("ЭКСМО", "123308, г. Москва, ул. Зорге, д.1, стр.1.", "+7 (495) 411-68-86", "info@eksmo.ru");
+        publisher1.getPublisherData();
+        Publisher<Integer> publisher2 = new Publisher<Integer>("МИФ", "Москва, м. Пушкинская, Тверская, Чеховская, Большой Козихинский пер., д. 7, стр. 2, 2-й этаж, оф. 24", 591101, "support@m-i-f.ru");
+        publisher2.getPublisherData();
         new Scanner(System.in).nextLine();
     }
 }
