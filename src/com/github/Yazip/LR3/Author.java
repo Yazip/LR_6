@@ -1,7 +1,7 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс автор
-public class Author implements Writer {
+public class Author implements Writer, Cloneable {
     protected String last_name;
     protected String initials;
     protected String biography;
@@ -58,5 +58,14 @@ public class Author implements Writer {
     @Override
     public void write() {
         System.out.println("Книга написана");
+    }
+    // Переопределение метода clone() для поддержки клонирования
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

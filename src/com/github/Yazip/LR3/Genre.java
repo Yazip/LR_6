@@ -1,9 +1,10 @@
 package com.github.Yazip.LR3;
 import java.util.Scanner;
 // Класс жанр
-public class Genre {
+public class Genre implements Cloneable {
     private String name;
     private String description;
+    private Author[] authors;
     private static int genre_count = 0;
     // Конструктор без параметров
     public Genre() {
@@ -43,6 +44,18 @@ public class Genre {
         System.out.println("Информация о жанре:");
         System.out.println("Название: " + name);
         System.out.println("Описание: " + description);
+        if (authors != null) {
+            System.out.println("Авторы, пишущие в этом жанре:");
+            for (int i = 0; i < authors.length; i++) {
+                authors[i].getAuthorData();
+            }
+        }
+    }
+    public void setAuthors(Author[] authors) {
+        this.authors = new Author[authors.length];
+        for (int i = 0; i < authors.length; i++) {
+            this.authors[i] = (Author) authors[i].clone();
+        }
     }
     // Статический геттер для получения кол-ва объектов
     public static int getGenreCount() {
@@ -52,5 +65,29 @@ public class Genre {
     @Override
     public String toString() {
         return "\nНазвание: " + name + "\nОписание: " + description + "\n";
+    }
+    // Переопределение метода clone() для поддержки клонирования
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
+    // Метод для мелкого клонирования
+    public Genre shallowClone() {
+        return (Genre) this.clone();
+    }
+    // Метод для глубокого клонирования
+    public Genre deepClone() {
+        Genre genre_clone = (Genre) this.clone();
+        if (this.authors != null) {
+            genre_clone.authors = new Author[this.authors.length];
+            for (int i = 0; i < this.authors.length; i++) {
+                genre_clone.authors[i] = (Author) this.authors[i].clone();
+            }
+        }
+        return genre_clone;
     }
 }
